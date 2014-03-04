@@ -7,6 +7,8 @@ alias gffs="git flow feature start"
 alias gffp="git flow feature publish"
 alias gfr="git flow release"
 
+export JRUBY_OPTS=-J-Xmx1024m
+
 function parse_git_branch {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   echo "("${ref#refs/heads/}")" 

@@ -1,6 +1,6 @@
 [core]
 	excludesfile = /Users/topper/.gitignore_global
-    editor = mate -w
+    editor = subl -w
 
 [color]
     diff = auto

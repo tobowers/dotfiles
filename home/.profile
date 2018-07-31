@@ -19,7 +19,7 @@ RED="\[\033[0;31m\]"
 YELLOW="\[\033[0;33m\]" 
 GREEN="\[\033[0;32m\]" 
 
-PS1="$RED\$(date +%H:%M) \w$YELLOW \$(parse_git_branch)$GREEN \$(/Users/tbowers/code/platform-infrastructure/bin/sandbox ps1)\$ "
+PS1="$RED\$(date +%H:%M) \w$YELLOW \$(parse_git_branch)$GREEN \$ "
 
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion

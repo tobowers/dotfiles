@@ -1,5 +1,5 @@
 [core]
-	excludesfile = /Users/tbowers/.gitignore_global
+	excludesfile = /Users/tobowers/.gitignore_global
    editor = subl -w
 	autocrlf = input
 

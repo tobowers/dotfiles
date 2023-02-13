@@ -1,4 +1,4 @@
-export EDITOR='subl -w'
+export EDITOR='code -w'
 
 alias delmerged="git branch --merged | grep -v '\*' | xargs -n 1 git branch -d"
 
@@ -20,10 +20,9 @@ YELLOW="\[\033[0;33m\]"
 GREEN="\[\033[0;32m\]" 
 
 PS1="$RED\$(date +%H:%M) \w$YELLOW \$(parse_git_branch)$GREEN \$ "
+export SIMPLE_PS1="$GREEN \$ "
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
-fi
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 alias gpo="git push origin $1"
 gpt () {
@@ -31,6 +30,13 @@ gpt () {
   `git push origin ${b##refs/heads/}`
 }
 
-export PATH="./bin:/usr/local/bin:/usr/local/share/npm/bin:$GOPATH/bin:$HOME/bin:$HOME/Library/Python/2.7/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH" # Add RVM to PATH for scripting
-
+export PATH="./bin:/usr/local/sbin:/usr/local/bin:$GOPATH/bin:$HOME/bin:/usr/local/opt/ruby/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:/usr/local/share/npm/bin:./node_modules/.bin:$PATH" # Add RVM to PATH for scripting
+export PATH="$PATH:/usr/local/lib/ruby/gems/2.6.0/bin"
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:/Users/tobowers/Library/Python/3.7/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/Users/tobowers/.local/share/solana/install/active_release/bin:$PATH"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
